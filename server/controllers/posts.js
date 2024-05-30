@@ -6,7 +6,7 @@ module.exports = {
     try {
       let { title, content, status, userId } = req.body;
       await Post.create({ title, content, userId, privateStatus: status });
-      res.status(200);
+      res.sendStatus(200);
     } catch (error) {
       console.error(error);
       res.status(400).send(error);
